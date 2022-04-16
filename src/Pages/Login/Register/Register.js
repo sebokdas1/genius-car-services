@@ -7,9 +7,7 @@ import auth from '../../../firebase.init';
 const Register = () => {
     const [
         createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
+        user
     ] = useCreateUserWithEmailAndPassword(auth);
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -24,7 +22,6 @@ const Register = () => {
 
     const handleRegister = event => {
         event.preventDefault();
-        // const name = event.target.name.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password)
